@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moving Estimate &amp; Inventory Builder — PACKERS &amp; MOVERS</title>
+  <meta name="description" content="Calculate your customized moving estimate and build a room-by-room household or commercial inventory with our interactive multi-step relocation planner.">
+  <link rel="canonical" href="https://example.com/moving-estimator.html">
+
+  <meta property="og:title" content="Moving Estimate &amp; Inventory Builder — PACKERS &amp; MOVERS">
+  <meta property="og:description" content="A signature interactive tool: Select rooms, configure items with live volumetric calculations, and review illustrative move requirements.">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-header" id="site_header">
+    <div class="container header-container">
+      <a href="index.html" class="brand" aria-label="Packers & Movers Homepage">
+        <svg class="brand-symbol" viewBox="0 0 48 48" fill="none">
+          <path d="M24 4L42 14V34L24 44L6 34V14L24 4Z" stroke="#173D35" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M24 4L42 14L24 24L6 14L24 4Z" fill="#FAF8F2" stroke="#173D35" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M24 24V44" stroke="#173D35" stroke-width="2"/>
+          <path d="M12 8C16 4 32 4 36 8" stroke="#C87855" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 3"/>
+          <path d="M24 16C21.79 16 20 17.79 20 20C20 23.5 24 28 24 28C24 28 28 23.5 28 20C28 17.79 26.21 16 24 16Z" fill="#C87855"/>
+          <circle cx="24" cy="20" r="1.5" fill="#FAF8F2"/>
+        </svg>
+        <span class="brand-logo-text">PACKERS &amp; MOVERS</span>
+      </a>
+
+      <nav class="header-nav" id="main_navigation" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item-dropdown">
+            <button type="button" class="nav-link dropdown-toggle active" aria-expanded="false" aria-haspopup="true">
+              <span>Services</span>
+              <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="dropdown-menu">
+              <a href="services.html" class="dropdown-item">
+                <span class="dropdown-item-title">All Moving Services</span>
+                <span class="dropdown-item-desc">Comprehensive residential &amp; commercial solutions</span>
+              </a>
+              <a href="household.html" class="dropdown-item">
+                <span class="dropdown-item-title">Household Moving</span>
+                <span class="dropdown-item-desc">Apartments, villas, and fragile item packing</span>
+              </a>
+              <a href="commercial.html" class="dropdown-item">
+                <span class="dropdown-item-title">Office &amp; Commercial</span>
+                <span class="dropdown-item-desc">Workstations, servers, archives &amp; retail</span>
+              </a>
+              <a href="moving-estimator.html" class="dropdown-item active">
+                <span class="dropdown-item-title">Moving Estimator</span>
+                <span class="dropdown-item-desc">Interactive room &amp; item volume builder</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <!-- Mobile Drawer CTA Button (Only visible on mobile drawer, hidden on desktop) -->
+        <div class="nav-mobile-cta">
+          <a href="contact.html" class="btn btn-primary" style="width: 100%;">Direct Enquiry</a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="contact.html" class="btn btn-primary btn-sm">Direct Enquiry</a>
+        <button type="button" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main_navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: calc(var(--header-height) + 24px); padding-bottom: 90px;">
+    <div class="container">
+      
+      <!-- PAGE HEADER -->
+      <div class="section-header centered" style="margin-bottom: 36px;">
+        <span class="eyebrow">Signature Interactive Planner</span>
+        <h1 class="section-title">MOVING ESTIMATE &amp; INVENTORY BUILDER</h1>
+        <p class="section-subtitle">
+          Configure your relocation requirements step-by-step. Select your rooms, tally your furniture and cartons, and view an illustrative planning estimate.
+        </p>
+      </div>
+
+      <!-- ESTIMATOR WIZARD ROOT -->
+      <div class="estimator-wizard-root">
+        <div class="estimator-layout">
+          
+          <!-- LEFT / MAIN INTERACTION CARD -->
+          <div class="estimator-main-card">
+            
+            <!-- STEP INDICATOR NAV -->
+            <div class="estimator-steps-nav" aria-label="Estimator Progress">
+              <button type="button" class="step-indicator active" data-step="1">
+                <span class="step-num-circle">1</span>
+                <span class="step-label">Move Details</span>
+              </button>
+
+              <button type="button" class="step-indicator" data-step="2">
+                <span class="step-num-circle">2</span>
+                <span class="step-label">Select Rooms</span>
+              </button>
+
+              <button type="button" class="step-indicator" data-step="3">
+                <span class="step-num-circle">3</span>
+                <span class="step-label">Build Inventory</span>
+              </button>
+
+              <button type="button" class="step-indicator" data-step="4">
+                <span class="step-num-circle">4</span>
+                <span class="step-label">Services</span>
+              </button>
+
+              <button type="button" class="step-indicator" data-step="5">
+                <span class="step-num-circle">5</span>
+                <span class="step-label">Review</span>
+              </button>
+
+              <button type="button" class="step-indicator" data-step="6">
+                <span class="step-num-circle">6</span>
+                <span class="step-label">Estimate</span>
+              </button>
+            </div>
+
+            <!-- STEP 1: MOVING DETAILS -->
+            <div class="estimator-step-panel" data-step="1">
+              <h3 style="margin-bottom: 20px;">Step 1: Moving Locations &amp; Access</h3>
+              <p style="margin-bottom: 24px; font-size: 0.95rem;">Please provide origin, destination, and floor access details to help calibrate carrier vehicle and elevator handling.</p>
+              
+              <div class="form-grid-2" style="margin-bottom: 20px;">
+                <div class="form-group">
+                  <label for="est_from" class="form-label">Moving From (Origin City / Area) *</label>
+                  <input type="text" id="est_from" class="form-control" placeholder="e.g. Jubilee Hills, Hyderabad" required>
+                </div>
+                <div class="form-group">
+                  <label for="est_to" class="form-label">Moving To (Destination City / Area) *</label>
+                  <input type="text" id="est_to" class="form-control" placeholder="e.g. Indiranagar, Bengaluru" required>
+                </div>
+              </div>
+
+              <div class="form-grid-2" style="margin-bottom: 24px;">
+                <div class="form-group">
+                  <label for="est_date" class="form-label">Target Moving Date *</label>
+                  <input type="date" id="est_date" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="est_property" class="form-label">Property Type</label>
+                  <select id="est_property" class="form-control">
+                    <option value="1 BHK">1 BHK Apartment</option>
+                    <option value="2 BHK" selected>2 BHK Apartment</option>
+                    <option value="3 BHK">3 BHK Apartment</option>
+                    <option value="4 BHK / Villa">4 BHK / Independent Villa</option>
+                    <option value="Office">Office / Commercial Space</option>
+                    <option value="Other">Other / Studio</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Floor & Lift Access Details -->
+              <h4 style="font-size: 1.05rem; margin-bottom: 14px; border-top: 1px solid var(--color-border-subtle); padding-top: 18px;">Floor &amp; Elevator Availability</h4>
+              <div class="form-grid-2" style="margin-bottom: 24px;">
+                <div style="background: var(--color-warm-ivory); padding: 16px; border-radius: 8px; border: 1px solid var(--color-border);">
+                  <h5 style="margin-bottom: 12px; color: var(--color-deep-forest);">Pickup Location Access</h5>
+                  <div class="form-group" style="margin-bottom: 12px;">
+                    <label for="est_pickup_floor" class="form-label">Floor Number</label>
+                    <input type="number" id="est_pickup_floor" class="form-control" value="1" min="0" max="80">
+                  </div>
+                  <div class="form-group">
+                    <label for="est_pickup_lift" class="form-label">Service / Freight Lift Available?</label>
+                    <select id="est_pickup_lift" class="form-control">
+                      <option value="yes" selected>Yes — Elevator Available</option>
+                      <option value="no">No — Staircase Carry Required</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div style="background: var(--color-warm-ivory); padding: 16px; border-radius: 8px; border: 1px solid var(--color-border);">
+                  <h5 style="margin-bottom: 12px; color: var(--color-deep-forest);">Destination Location Access</h5>
+                  <div class="form-group" style="margin-bottom: 12px;">
+                    <label for="est_dest_floor" class="form-label">Floor Number</label>
+                    <input type="number" id="est_dest_floor" class="form-control" value="2" min="0" max="80">
+                  </div>
+                  <div class="form-group">
+                    <label for="est_dest_lift" class="form-label">Service / Freight Lift Available?</label>
+                    <select id="est_dest_lift" class="form-control">
+                      <option value="yes" selected>Yes — Elevator Available</option>
+                      <option value="no">No — Staircase Carry Required</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 2: ROOM SELECTION -->
+            <div class="estimator-step-panel" data-step="2" style="display: none;">
+              <h3 style="margin-bottom: 12px;">Step 2: Select Rooms in Your Relocation</h3>
+              <p style="margin-bottom: 24px; font-size: 0.95rem;">Tap each room included in your move. We'll automatically generate an initial inventory of typical items you can customize in Step 3.</p>
+
+              <div class="room-selection-grid" id="room_selection_grid">
+                <!-- Dynamically populated via inventory.js & estimator.js -->
+              </div>
+
+              <div style="background: var(--color-soft-mint-subtle); padding: 14px 18px; border-radius: 8px; border: 1px solid var(--color-border); font-size: 0.88rem; color: var(--color-deep-forest);">
+                💡 <strong>Tip:</strong> You can select multiple bedrooms, living spaces, and storage areas. In the next step, you can fine-tune every single furniture piece, appliance, and box quantity.
+              </div>
+            </div>
+
+            <!-- STEP 3: INVENTORY BUILDER -->
+            <div class="estimator-step-panel" data-step="3" style="display: none;">
+              <h3 style="margin-bottom: 12px;">Step 3: Room-by-Room Inventory Builder</h3>
+              <p style="margin-bottom: 20px; font-size: 0.95rem;">Adjust item counts using the <strong>+</strong> and <strong>−</strong> buttons. Your total volumetric space and carton estimates update automatically.</p>
+
+              <!-- Room Navigation Tabs -->
+              <div class="room-tabs-strip" id="inventory_room_tabs">
+                <!-- Populated via estimator.js -->
+              </div>
+
+              <!-- Inventory Items Table -->
+              <div class="inventory-items-table" id="inventory_items_table">
+                <!-- Dynamic Item rows with counters -->
+              </div>
+            </div>
+
+            <!-- STEP 4: ADDITIONAL SERVICES -->
+            <div class="estimator-step-panel" data-step="4" style="display: none;">
+              <h3 style="margin-bottom: 12px;">Step 4: Select Additional Moving Services</h3>
+              <p style="margin-bottom: 24px; font-size: 0.95rem;">Customize your relocation package with specialized handling, vehicle carriers, or storage support.</p>
+
+              <div class="services-choice-grid">
+                <label class="service-tile-label">
+                  <input type="checkbox" class="service-checkbox" value="fullPacking" checked>
+                  <div class="service-tile-info">
+                    <h5>Full Professional Packing</h5>
+                    <p>Complete multi-ply cartons, bubble wrap, stretch film, and packing tape provided.</p>
+                  </div>
+                </label>
+
+                <label class="service-tile-label">
+                  <input type="checkbox" class="service-checkbox" value="partialPacking">
+                  <div class="service-tile-info">
+                    <h5>Partial Fragile Packing Only</h5>
+                    <p>Packing assistance reserved for kitchen dinnerware, electronics, and delicate art.</p>
+                  </div>
+                </label>
+
+                <label class="service-tile-label">
+                  <input type="checkbox" class="service-checkbox" value="unpacking" checked>
+                  <div class="service-tile-info">
+                    <h5>Unpacking &amp; Placement Assistance</h5>
+                    <p>Boxes opened in assigned rooms, items unpacked on flat surfaces, and debris removed.</p>
+                  </div>
+                </label>
+
+                <label class="service-tile-label">
+                  <input type="checkbox" class="service-checkbox" value="dismantling" checked>
+                  <div class="service-tile-info">
+                    <h5>Furniture Dismantling</h5>
+                    <p>Disassembly of master beds, dining tables, modular wardrobes, and study desks.</p>
+                  </div>
+                </label>
+
+                <label class="service-tile-label">
+                  <input type="checkbox" class="service-checkbox" value="reassembly" checked>
+                  <div class="service-tile-info">
+                    <h5>Furniture Reassembly</h5>
+                    <p>Complete structural rebuild of all dismantled furniture at your destination address.</p>
+                  </div>
+                </label>
+
+                <label class="service-tile-label">
+                  <input type="checkbox" class="service-checkbox" value="carTransport">
+                  <div class="service-tile-info">
+                    <h5>Car Carrier Transportation</h5>
+                    <p>Dedicated enclosed hydraulic trailer transport with wheel-lock anchoring.</p>
+                  </div>
+                </label>
+
+                <label class="service-tile-label">
+                  <input type="checkbox" class="service-checkbox" value="bikeTransport">
+                  <div class="service-tile-info">
+                    <h5>Two-Wheeler / Bike Carrier</h5>
+                    <p>Encased wooden pallet transport for motorcycles and scooters.</p>
+                  </div>
+                </label>
+
+                <label class="service-tile-label">
+                  <input type="checkbox" class="service-checkbox" value="storage">
+                  <div class="service-tile-info">
+                    <h5>Temporary Warehousing</h5>
+                    <p>Clean, monitored palletized storage (subject to regional facility availability).</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- STEP 5: REVIEW MOVING REQUIREMENTS -->
+            <div class="estimator-step-panel" data-step="5" style="display: none;">
+              <h3 style="margin-bottom: 12px;">Step 5: Review Moving Requirements</h3>
+              <p style="margin-bottom: 24px; font-size: 0.95rem;">Review your complete move parameters. You can click "Edit" on any section to adjust details before generating the estimate.</p>
+
+              <div style="display: flex; flex-direction: column; gap: 16px;">
+                <div style="background: var(--color-warm-ivory); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 20px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <h5 style="color: var(--color-deep-forest); font-size: 1rem;">1. Route &amp; Property Details</h5>
+                    <button type="button" class="btn btn-outline btn-sm" data-jump-step="1">Edit</button>
+                  </div>
+                  <p id="summary_route" style="font-weight: 600; color: var(--color-charcoal); margin-bottom: 4px;">—</p>
+                  <p id="summary_property" style="font-size: 0.9rem; margin-bottom: 4px;">—</p>
+                  <p id="summary_floor_lift" style="font-size: 0.85rem; color: var(--color-charcoal-muted); margin: 0;">—</p>
+                </div>
+
+                <div style="background: var(--color-warm-ivory); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 20px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <h5 style="color: var(--color-deep-forest); font-size: 1rem;">2. Selected Rooms &amp; Inventory</h5>
+                    <button type="button" class="btn btn-outline btn-sm" data-jump-step="2">Edit Rooms</button>
+                  </div>
+                  <p id="summary_rooms_list" style="font-weight: 600; color: var(--color-charcoal); margin-bottom: 6px;">—</p>
+                  <p id="summary_totals" style="font-size: 0.9rem; color: var(--color-deep-forest); font-weight: 700; margin: 0;">—</p>
+                </div>
+
+                <div style="background: var(--color-warm-ivory); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 20px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <h5 style="color: var(--color-deep-forest); font-size: 1rem;">3. Selected Additional Services</h5>
+                    <button type="button" class="btn btn-outline btn-sm" data-jump-step="4">Edit Services</button>
+                  </div>
+                  <p id="summary_services_list" style="font-size: 0.92rem; color: var(--color-charcoal); margin: 0;">—</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 6: CONTACT DETAILS & GENERATE DEMO ESTIMATE -->
+            <div class="estimator-step-panel" data-step="6" style="display: none;">
+              <div id="step_6_inputs">
+                <h3 style="margin-bottom: 12px;">Step 6: Contact Details &amp; Estimate Summary</h3>
+                <p style="margin-bottom: 24px; font-size: 0.95rem;">Enter demo contact details to finalize the volumetric calculation and generate your illustrative planning estimate.</p>
+
+                <div class="form-grid-3" style="margin-bottom: 24px;">
+                  <div class="form-group">
+                    <label for="est_contact_name" class="form-label">Full Name *</label>
+                    <input type="text" id="est_contact_name" class="form-control" placeholder="Your Name" value="Demo Customer" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="est_contact_phone" class="form-label">Phone Number *</label>
+                    <input type="tel" id="est_contact_phone" class="form-control" placeholder="0000000000" value="0000000000" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="est_contact_email" class="form-label">Email Address *</label>
+                    <input type="email" id="est_contact_email" class="form-control" placeholder="demo@example.com" value="demo@example.com" required>
+                  </div>
+                </div>
+
+                <div style="background: #FFF8E6; border: 1px solid #F0C36D; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 0.85rem; color: #7A5300;">
+                  <strong>Transparent Demo Notice:</strong> Clicking "Generate Demo Estimate" executes a client-side calculation using volumetric formulas and carton factors. No actual booking is made and no information is transmitted or stored on any server.
+                </div>
+              </div>
+
+              <!-- Output Container for Demo Calculation -->
+              <div id="demo_result_output"></div>
+            </div>
+
+            <!-- WIZARD NAVIGATION CONTROLS -->
+            <div style="margin-top: 36px; display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--color-border-subtle);">
+              <button type="button" id="est_btn_prev" class="btn btn-outline" style="display: none;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transform: rotate(180deg);">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+                <span>Back</span>
+              </button>
+
+              <div style="margin-left: auto; display: flex; gap: 12px;">
+                <button type="button" id="est_btn_next" class="btn btn-primary">
+                  <span>Continue</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+
+                <button type="button" id="est_btn_generate" class="btn btn-primary" style="display: none;">
+                  <span>Generate Demo Estimate</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT / SIDEBAR SUMMARY TALLY -->
+          <div class="estimator-sidebar-card">
+            <h4 style="margin-bottom: 16px; color: var(--color-deep-forest);">Live Inventory Tally</h4>
+
+            <div class="summary-metric-card">
+              <div class="metric-row">
+                <span class="metric-label">Selected Rooms:</span>
+                <span class="metric-val" id="side_rooms_count">3</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-label">Total Selected Items:</span>
+                <span class="metric-val" id="side_items_count">12</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-label">Est. Moving Cartons:</span>
+                <span class="metric-val" id="side_cartons_count">16</span>
+              </div>
+              <div class="metric-row" style="border-top: 1px dashed var(--color-border); padding-top: 8px; margin-top: 8px;">
+                <span class="metric-label">Est. Cubic Volume:</span>
+                <span class="metric-val" id="side_cuft" style="color: var(--color-terracotta);">285 cu.ft</span>
+              </div>
+            </div>
+
+            <h5 style="font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-charcoal-muted); margin-bottom: 8px;">Configured Items</h5>
+            <div class="sidebar-items-preview" id="side_items_preview">
+              <!-- Dynamically populated lines -->
+            </div>
+
+            <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--color-border-subtle); text-align: center;">
+              <span style="font-size: 0.75rem; color: var(--color-charcoal-muted); display: block; line-height: 1.4;">
+                Client-side volume algorithm calibrated for standard 14ft to 22ft container trucks.
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="brand">
+            <svg class="brand-symbol" viewBox="0 0 48 48" fill="none">
+              <path d="M24 4L42 14V34L24 44L6 34V14L24 4Z" stroke="#FAF8F2" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M24 4L42 14L24 24L6 14L24 4Z" fill="#173D35" stroke="#FAF8F2" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M24 24V44" stroke="#FAF8F2" stroke-width="2"/>
+              <path d="M24 16C21.79 16 20 17.79 20 20C20 23.5 24 28 24 28C24 28 28 23.5 28 20C28 17.79 26.21 16 24 16Z" fill="#C87855"/>
+              <circle cx="24" cy="20" r="1.5" fill="#FAF8F2"/>
+            </svg>
+            <span class="brand-logo-text">PACKERS &amp; MOVERS</span>
+          </div>
+          <p class="footer-desc">
+            A premium relocation digital experience showcasing structured household moves, corporate shifting, automotive logistics, and transparent planning tools.
+          </p>
+          <div style="margin-top: 16px;">
+            <span class="footer-demo-notice">TSCG Technologies Portfolio Demo</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="services.html" class="footer-link">Moving Services</a></li>
+            <li><a href="household.html" class="footer-link">Household Relocation</a></li>
+            <li><a href="commercial.html" class="footer-link">Business Moving</a></li>
+            <li><a href="moving-estimator.html" class="footer-link">Estimate Tool</a></li>
+            <li><a href="contact.html" class="footer-link">Contact &amp; Enquiry</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="household.html" class="footer-link">Household Moving</a></li>
+            <li><a href="commercial.html" class="footer-link">Office Relocation</a></li>
+            <li><a href="services.html#local-moving" class="footer-link">Local Shifting</a></li>
+            <li><a href="services.html#intercity-moving" class="footer-link">Intercity Moving</a></li>
+            <li><a href="services.html#vehicle-transport" class="footer-link">Car &amp; Bike Transport</a></li>
+            <li><a href="services.html#storage-solutions" class="footer-link">Warehousing &amp; Storage</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Working Hours</h4>
+          <p style="font-size: 0.9rem; color: rgba(250, 248, 242, 0.8); line-height: 1.6;">
+            Monday – Saturday<br>
+            9:00 AM – 6:00 PM<br>
+            Sunday: Closed for routine surveys
+          </p>
+          <div style="margin-top: 18px;">
+            <a href="moving-estimator.html" class="btn btn-outline-light btn-sm" style="font-size: 0.8rem;">Build Inventory</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Demo Contact</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <span>Phone: 0000000000</span><br>
+              <span>Alt: 0000000000</span>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div>
+              <a href="mailto:demo@example.com" class="footer-link">demo@example.com</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <span>Plot No. 000, Demo Road, Sample Area, Hyderabad, Telangana – 000000.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span class="current-year">2026</span> PACKERS &amp; MOVERS. All illustrative demo rights reserved.
+        </div>
+        <div>
+          <span>TSCG Technologies Portfolio Demo • Non-Commercial Concept</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/inventory.js"></script>
+  <script src="js/estimator.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
